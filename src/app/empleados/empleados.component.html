@@ -1,0 +1,60 @@
+<navbar #barraEmpleados></navbar>
+
+    <div class="row justify-content-center">
+        <!-- añadir responsive col-**-num -->
+        <h1>Empleados</h1>
+    </div>
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="">
+            <button type="" class="btn bg-success" [routerLink]="['/empleado/nuevoEmpleado']">Nuevo Empleado</button>
+        </div>
+    </div>
+</div>
+<!-- <h2>My Heroes</h2>
+<ul>
+  <li *ngFor="let Employee of lista">
+    <span>{{Employee.name}}</span> {{Employee.dni}}
+  </li>
+</ul> -->
+<!-- SOLUCION 1 PARA DISTRIBUCION DE EMPLEADOS-->
+<!-- <div class="row">
+    <div class="col-sm-6 col-md-4" *ngFor="let Employee of lista">
+
+    </div>
+</div> -->
+<!-- SOLUCION 2 PARA DISTRIBUCION DE EMPLEADOS-->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let Employee of lista">
+        </div>
+    </div>
+</div> -->
+<!-- SOLUCION 3 COMBINACION DE SOL1 Y SOL2-->
+<!--
+<div class="" *ngFor="let Employee of lista">
+    <div class="card m-3" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text">{{Employee.name}}</p>
+            <p class="card-text">DNI: {{Employee.dni}}</p>
+            <a href="#" class="btn btn-primary">Historial</a>
+            <a href="#" class="btn btn-primary">Editar</a>
+            <a href="#" class="btn btn-primary">Eliminar</a>
+        </div>
+    </div>
+</div>
+-->
+<div class="row">
+<div class="col-sm-6 col-md-4" *ngFor="let empleado of empleados">
+    <div class="card m-3" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text"><label>NOMBRE:</label> {{empleado.nombre}}</p>
+            <p class="card-text"><label>APELLIDOS:</label> {{empleado.apPaterno}} {{empleado.apMaterno}}</p>
+            <p class="card-text"><label>DNI:</label> {{empleado.dni}}</p>
+            <a [routerLink]="['/empleado/historial', empleado.idEmpleado]" class="btn btn-success">Historial</a>
+            <a [routerLink]="['/empleado/editar', empleado.idEmpleado]" class="btn btn-warning">Editar</a>
+            <a (click)="onEliminarEmpleado(empleado.idEmpleado)" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+</div>
+</div>

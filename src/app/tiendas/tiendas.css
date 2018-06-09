@@ -1,0 +1,23 @@
+h1{
+  background-color:rgb(181, 185, 185);
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 28px;
+  width : 100%;
+  margin: 0px;
+  width:100%;
+  font-weight: bold;
+  font-family: 'Exo', sans-serif;
+}
+label {
+
+  text-align: center;
+  display: inline;
+  margin: .5em 0;
+  color: black;
+  font-weight: bold;
+  
+  font-family: 'Times New Roman', Times, serif;
+}

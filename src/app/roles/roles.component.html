@@ -1,0 +1,62 @@
+<navbar #barraRoles></navbar>
+
+    <div class="row justify-content-center">
+        <!-- añadir responsive col-**-num -->
+        <h1>Roles</h1>
+    </div>
+<!--div class="container">
+    <div class="row justify-content-end">
+        <div class="col-lg-8 d-inline-flex p-2 bd-highlight">
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary mb-2" [routerLink]="['/roles/nuevoRol']" >Nuevo Rol</button>
+            </div>
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary mb-2">Editar</button>
+            </div>
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary mb-2">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-5">
+            <table class="table table-striped text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-secondary">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Admnistrador</td>
+                        <td>
+                            <input type="checkbox" class="form-check-input" id="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div-->
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="">
+            <button type="" class="btn bg-success" [routerLink]="['/roles/nuevoRol']">Nuevo Rol</button>
+        </div>
+    </div>
+</div>
+<div class="" *ngFor="let rol of roles">
+    <div class="card m-3" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text"><label>NOMBRE: </label>{{rol.nombre}}</p>
+            <p class="card-text"><label>DESCRIPCIÓN:</label> {{rol.descripcion}}</p>
+            <a [routerLink]="['/rol/editar', rol.idRol]" class="btn btn-warning">Editar</a>
+            <a (click)="onEliminarRol(rol.idRol)" class="btn btn-danger" >Eliminar</a>
+        </div>
+    </div>
+</div>

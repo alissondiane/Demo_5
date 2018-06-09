@@ -1,0 +1,59 @@
+<navbar></navbar>
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- añadir responsive col-**-num -->
+        <h1 class="text-white m-4">Historial de Asistencia</h1>
+    </div>
+    <div *ngIf="!historial">
+        <p>Cargando...</p>
+    </div>
+    <div *ngIf="historial" class="row justify-content-sm-center">
+        <form class="col col-md-8 col-sm-12">
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Nombre: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="{{historial.datosEmpleado.nombre}}" disabled>
+                </div>
+                <label for="" class="col-sm-2 col-form-label">Apellidos: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="{{historial.datosEmpleado.apPaterno}} {{historial.datosEmpleado.apMaterno}}"
+                        disabled>
+                </div>
+                <label for="" class="col-sm-2 col-form-label">DNI: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="{{historial.datosEmpleado.dni}}" disabled>
+                </div>
+                <label for="" class="col-sm-2 col-form-label">Usuario: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="{{historial.datosEmpleado.usuario}}" disabled>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="col col-md-8 col-sm-12">
+                <table class="table table-striped text-center">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Hora de Entrada</th>
+                      <th scope="col">Hora de Salida</th>
+                      <th scope="col">Horas Extras</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-secondary">
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{historial.fecha}}</td>
+                      <td>{{historial.hEntrada}}</td>
+                      <td>{{historial.hSalida}}</td>
+                      <td>{{historial.hExtras}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
